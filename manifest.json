@@ -1,0 +1,15 @@
+{
+  "name": "Murder in the Mafia Companion",
+  "short_name": "Mafia Audio",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#c9a34a",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
