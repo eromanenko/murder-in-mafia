@@ -1,4 +1,4 @@
-const version = 0.6;
+const version = 0.7;
 const CACHE_NAME = `mafia-audio-v${version}`;
 const ASSETS = [
   "./",
@@ -6,6 +6,13 @@ const ASSETS = [
   "./style.css",
   "./script.js",
   "./manifest.json",
+  "./logo.png",
+  "./apple-touch-icon.png",
+  "./favicon-96x96.png",
+  "./favicon.ico",
+  "./favicon.svg",
+  "./icon-192x192.png",
+  "./icon-512x512.png",
   "./images/head.png",
   "./audio/page-flip.mp3",
   "./audio/00.mp3",
