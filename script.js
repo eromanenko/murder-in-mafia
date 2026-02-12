@@ -50,6 +50,14 @@ const subtitleEl = document.getElementById("subtitle");
 const cardEl = document.getElementById("game-card");
 const audioPlayer = document.getElementById("audio-player");
 const audioSource = document.getElementById("audio-source");
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+const sfxPlayer = document.getElementById("sfx-player");
+
+function playSfx() {
+  sfxPlayer.currentTime = 0;
+  sfxPlayer.play().catch((e) => console.log("Звук ефекту не відтворився:", e));
+}
 
 function loadRound(index) {
   const round = rounds[index];
@@ -60,10 +68,14 @@ function loadRound(index) {
   audioPlayer.pause();
   audioSource.src = round.audio;
   audioPlayer.load();
+
+  prevBtn.style.visibility = index === 0 ? "hidden" : "visible";
+  nextBtn.style.visibility = index === rounds.length - 1 ? "hidden" : "visible";
 }
 
 document.getElementById("prev-btn").addEventListener("click", () => {
   if (currentIndex > 0) {
+    playSfx();
     currentIndex--;
     loadRound(currentIndex);
   }
@@ -71,6 +83,7 @@ document.getElementById("prev-btn").addEventListener("click", () => {
 
 document.getElementById("next-btn").addEventListener("click", () => {
   if (currentIndex < rounds.length - 1) {
+    playSfx();
     currentIndex++;
     loadRound(currentIndex);
   }
@@ -87,7 +100,6 @@ document.getElementById("share-btn").addEventListener("click", async () => {
     if (navigator.share) {
       await navigator.share(shareData);
     } else {
-      // Фолбек, якщо Web Share API не підтримується
       window.open(
         `https://wa.me/?text=${encodeURIComponent(shareData.text + " " + shareData.url)}`,
         "_blank",
