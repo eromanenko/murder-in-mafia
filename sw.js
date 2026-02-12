@@ -1,4 +1,4 @@
-const version = 0.5;
+const version = 0.6;
 const CACHE_NAME = `mafia-audio-v${version}`;
 const ASSETS = [
   "./",

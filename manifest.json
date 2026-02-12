@@ -7,8 +7,9 @@
   "theme_color": "#c9a34a",
   "icons": [
     {
+      "purpose": "maskable",
+      "sizes": "600x600",
       "src": "logo.png",
-      "sizes": "512x512",
       "type": "image/png"
     }
   ]
